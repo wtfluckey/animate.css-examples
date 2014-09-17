@@ -52,4 +52,12 @@ $(function() {
       }
     });
   });
+
+  $('.block').mousedown(function() {
+    var type = $(this).html();
+    /* alert(type); */
+    $(this).removeClass('animated '+ type + '');
+  }).mouseup(function() {
+    $(this).addClass('animated ' + type + '');
+  });
 });
