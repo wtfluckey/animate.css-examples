@@ -44,8 +44,17 @@ input.error {
   margin-left: 20px;
 }
 
+.submit_button.success {
+  color: white;
+  background-color: green;
+}
+
 .submit_button.hover {
   background-color: #5F7A9E;
+}
+
+.form {
+  height: 100px;
 }
 
 .quick {

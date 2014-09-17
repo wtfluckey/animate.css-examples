@@ -18,14 +18,23 @@ $(function() {
   });
 
   $('.submit_button').hover(function() {
-    $(this).addClass('hover');
+    $(this).addClass('hover')
   }, function() {
-    $(this).removeClass('hover');
+      $(this).removeClass('hover');
   });
 
-  $('.submit_button').on('click', function() {
-    $('input').addClass('quick animated flash error');
+  $('#error_button').on('click', function() {
+    $('.input_error').addClass('quick animated flash error');
   }).on('mouseup', function() {
-    $('input').removeClass('animated flash');
+    $('.input_error').removeClass('animated flash');
   });
+
+  $('#success_button').on('click', function() {
+    $(this).removeClass('hover');
+    $(this).addClass('quick animated tada success');
+    $(this).html('Success!');
+  }).on('mouseup', function() {
+    $('#success_button').removeClass('animated tada success');
+  });
+  
 });
