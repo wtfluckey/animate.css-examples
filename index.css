@@ -1,4 +1,5 @@
 .container {
+  padding-top: 30px;
   text-align: center;
   max-width: 700px;
   margin: auto;
@@ -9,9 +10,12 @@ h1 {
   border-bottom: 1px solid #666;
 }
 
-section {
-  margin-top: 30px;
-  margin-bottom: 80px;
+.header {
+  margin-bottom: 50px;
+}
+
+.hover, .click {
+  height: 100px;
 }
 
 .button {
@@ -20,8 +24,10 @@ section {
   padding: 10px;
 }
 
+
 form {
   margin-top: 10px;
+  margin-bottom: 50px;
 }
 
 .animation_info {
@@ -68,12 +74,18 @@ input.warning {
   background-color: #5F7A9E;
 }
 
-.form {
-  height: 100px;
-}
-
 .quick {
   -webkit-animation-duration: .7s;
+}
+
+.scrolling > div {
+  padding: 50px;
+  margin: 50px;
+  background-color: lightgreen;
+}
+
+.hideme {
+  opacity: 0;
 }
 
 
