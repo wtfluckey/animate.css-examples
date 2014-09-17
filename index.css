@@ -47,6 +47,12 @@ input.error {
   box-shadow: 0px 0px 5px red, inset 0px 0px 2px red;
 }
 
+input.warning {
+  border: 1px solid orange;
+  box-shadow: 0px 0px 5px orange, inset 0px 0px 2px orange;
+}
+
+
 .submit_button {
   background-color: #E0E9F5;
   width: 50px;
