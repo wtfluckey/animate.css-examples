@@ -34,10 +34,22 @@ $(function() {
   }).on('mouseup', function() {
     $('#success_button').removeClass('animated tada success');
   });
-  
+
   $('#warning_button').on('click', function() {
     $('.input_warning').addClass('quick animated pulse warning');
   }).on('mouseup', function() {
     $('.input_warning').removeClass('animated pulse');
+  });
+
+  $(window).scroll( function() {
+    $('.hideme').each( function(i) {
+      var bottom_of_object = $(this).position().top + $(this).outerHeight();
+      var bottom_of_window = $(window).scrollTop() + $(window).height();
+      var type = $(this).html();
+
+      if (bottom_of_window > bottom_of_object) {
+        $(this).removeClass('hideme').addClass('animated '+ type + '');
+      }
+    });
   });
 });
