@@ -30,9 +30,7 @@ $(function() {
   });
 
   $('#success_button').on('click', function() {
-    $(this).removeClass('hover');
-    $(this).addClass('quick animated tada success');
-    $(this).html('Success!');
+    $(this).removeClass('hover').addClass('quick animated tada success').html('Success!');
   }).on('mouseup', function() {
     $('#success_button').removeClass('animated tada success');
   });
