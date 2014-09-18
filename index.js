@@ -1,5 +1,5 @@
 $(function() {
-  $('.hover > span').hover(
+  $('.button').not('.click').hover(
     function() {
       var type = $(this).html();
       $(this).addClass('animated '+ type + '');
@@ -9,7 +9,7 @@ $(function() {
     $(this).removeClass('animated '+ type + '');
   });
 
-  $('.click > span').on('click', function() {
+  $('.button').not('.hover').on('click', function() {
     var type = $(this).html();
     $(this).addClass('animated '+ type + '');
   }).on('mouseup', function() {
