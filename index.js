@@ -53,11 +53,14 @@ $(function() {
     });
   });
 
-  $('.block').mousedown(function() {
-    var type = $(this).html();
-    /* alert(type); */
-    $(this).removeClass('animated '+ type + '');
-  }).mouseup(function() {
-    $(this).addClass('animated ' + type + '');
-  });
+  $('.block')
+    .mouseup(function() {
+      var type = $(this).html();
+      $(this).addClass('animated '+ type + '');
+  })
+    .mousedown(function() {
+      var type = $(this).html();
+      $(this).removeClass('animated '+ type + '');
+    });
+
 });
