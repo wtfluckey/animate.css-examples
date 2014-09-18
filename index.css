@@ -69,9 +69,10 @@ input.warning {
 
 .submit_button {
   background-color: #E0E9F5;
-  width: 50px;
   padding: 10px;
   margin-left: 20px;
+  display: inline-block;
+  width: 60px;
 }
 
 .submit_button.success {
