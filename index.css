@@ -70,7 +70,6 @@ input.warning {
 .submit_button {
   background-color: #E0E9F5;
   padding: 10px;
-  margin-left: 20px;
   display: inline-block;
   width: 60px;
 }
@@ -98,5 +97,8 @@ input.warning {
   opacity: 0;
 }
 
-
-
+.timing > div {
+  padding: 20px;
+  margin: 50px;
+  background-color: lightblue;
+}
