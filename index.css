@@ -83,10 +83,6 @@ input.warning {
   background-color: #5F7A9E;
 }
 
-.quick {
-  -webkit-animation-duration: .7s;
-}
-
 .scrolling > div {
   padding: 50px;
   margin: 50px;
@@ -101,4 +97,12 @@ input.warning {
   padding: 20px;
   margin: 50px;
   background-color: lightblue;
+}
+
+.quick {
+  -webkit-animation-duration: .7s;
+}
+
+.slow {
+  -webkit-animation-duration: 2s;
 }

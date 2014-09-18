@@ -57,10 +57,26 @@ $(function() {
     .mouseup(function() {
       var type = $(this).html();
       $(this).addClass('animated '+ type + '');
-  })
-    .mousedown(function() {
+  }).mousedown(function() {
       var type = $(this).html();
       $(this).removeClass('animated '+ type + '');
-    });
+  });
 
+  $('.js_slow_click').mouseup(function() {
+    $('#time_changer').removeClass().addClass('slow animated fadeInDown');
+  }).mousedown(function() {
+    $('#time_changer').removeClass();
+  });
+
+  $('.js_default_click').mouseup(function() {
+    $('#time_changer').removeClass().addClass('animated fadeInDown');
+  }).mousedown(function() {
+    $('#time_changer').removeClass();
+  });
+
+  $('.js_fast_click').mouseup(function() {
+    $('#time_changer').removeClass().addClass('quick animated fadeInDown');
+  }).mousedown(function() {
+    $('#time_changer').removeClass();
+  });
 });
