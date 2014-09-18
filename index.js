@@ -23,10 +23,10 @@ $(function() {
       $(this).removeClass('hover');
   });
 
-  $('#error_button').on('click', function() {
-    $('.input_error').addClass('quick animated flash error');
-  }).on('mouseup', function() {
-    $('.input_error').removeClass('animated flash');
+  $('#error_button').mouseup(function() {
+    $('#input_error').addClass('quick animated flash error');
+  }).mousedown(function() {
+    $('#input_error').removeClass();
   });
 
   $('#success_button').on('click', function() {
@@ -35,10 +35,10 @@ $(function() {
     $('#success_button').removeClass('animated tada success');
   });
 
-  $('#warning_button').on('click', function() {
-    $('.input_warning').addClass('quick animated pulse warning');
-  }).on('mouseup', function() {
-    $('.input_warning').removeClass('animated pulse');
+  $('#warning_button').mouseup(function() {
+    $('#input_warning').addClass('quick animated pulse warning');
+  }).mousedown(function() {
+    $('#input_warning').removeClass();
   });
 
   $(window).scroll( function() {
@@ -56,10 +56,10 @@ $(function() {
   $('.block')
     .mouseup(function() {
       var type = $(this).html();
-      $(this).addClass('animated '+ type + '');
+      $(this).removeClass().addClass('animated '+ type + '');
   }).mousedown(function() {
       var type = $(this).html();
-      $(this).removeClass('animated '+ type + '');
+      $(this).removeClass();
   });
 
   $('.js_supa_slow_click').mouseup(function() {
