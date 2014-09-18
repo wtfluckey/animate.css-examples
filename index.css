@@ -4,6 +4,7 @@
   max-width: 700px;
   margin: auto;
   font-family: 'Josefin Sans', sans-serif;
+  padding-bottom: 800px;
 }
 
 h1 {
@@ -103,6 +104,14 @@ input.warning {
   -webkit-animation-duration: .7s;
 }
 
+.supa_quick {
+  -webkit-animation-duration: .5s;
+}
+
 .slow {
   -webkit-animation-duration: 2s;
+}
+
+.supa_slow {
+  -webkit-animation-duration: 3s;
 }

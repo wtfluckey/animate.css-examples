@@ -62,20 +62,32 @@ $(function() {
       $(this).removeClass('animated '+ type + '');
   });
 
+  $('.js_supa_slow_click').mouseup(function() {
+    $('#time_changer').removeClass().addClass('supa_slow animated fadeInDown').html('3 seconds');
+  }).mousedown(function() {
+    $('#time_changer').removeClass();
+  });
+
   $('.js_slow_click').mouseup(function() {
-    $('#time_changer').removeClass().addClass('slow animated fadeInDown');
+    $('#time_changer').removeClass().addClass('slow animated fadeInDown').html('2 seconds');
   }).mousedown(function() {
     $('#time_changer').removeClass();
   });
 
   $('.js_default_click').mouseup(function() {
-    $('#time_changer').removeClass().addClass('animated fadeInDown');
+    $('#time_changer').removeClass().addClass('animated fadeInDown').html('1 second');
   }).mousedown(function() {
     $('#time_changer').removeClass();
   });
 
   $('.js_fast_click').mouseup(function() {
-    $('#time_changer').removeClass().addClass('quick animated fadeInDown');
+    $('#time_changer').removeClass().addClass('quick animated fadeInDown').html('.7 seconds');
+  }).mousedown(function() {
+    $('#time_changer').removeClass();
+  });
+
+  $('.js_supa_fast_click').mouseup(function() {
+    $('#time_changer').removeClass().addClass('supa_quick animated fadeInDown').html('.5 seconds');
   }).mousedown(function() {
     $('#time_changer').removeClass();
   });
