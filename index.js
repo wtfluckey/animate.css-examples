@@ -2,19 +2,19 @@ $(function() {
   $('.button').not('.click').hover(
     function() {
       var type = $(this).html();
-      $(this).addClass('animated '+ type + '');
+      $(this).addClass(type + ' animated');
   },
   function() {
     var type = $(this).html();
-    $(this).removeClass('animated '+ type + '');
+    $(this).removeClass(type + ' animated');
   });
 
   $('.button').not('.hover').on('click', function() {
     var type = $(this).html();
-    $(this).addClass('animated '+ type + '');
+    $(this).addClass(type + ' animated');
   }).on('mouseup', function() {
     var type = $(this).html();
-    $(this).removeClass('animated ' + type + '');
+    $(this).removeClass(type + ' animated');
   });
 
   $('.submit_button').hover(function() {
@@ -48,7 +48,7 @@ $(function() {
       var type = $(this).html();
 
       if (bottom_of_window > bottom_of_object) {
-        $(this).removeClass('hideme').addClass('animated '+ type + '');
+        $(this).removeClass('hideme').addClass(type + ' animated');
       }
     });
   });
@@ -56,7 +56,7 @@ $(function() {
   $('.block')
     .mouseup(function() {
       var type = $(this).html();
-      $(this).removeClass().addClass('animated '+ type + '');
+      $(this).removeClass().addClass(type + ' animated');
   }).mousedown(function() {
       var type = $(this).html();
       $(this).removeClass();
