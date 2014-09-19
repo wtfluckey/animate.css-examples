@@ -1,26 +1,22 @@
 $(function() {
-  $('.button').not('.click').hover(
-    function() {
-      var type = $(this).html();
-      $(this).addClass(type + ' animated');
-  },
-  function() {
-    var type = $(this).html();
-    $(this).removeClass(type + ' animated');
-  });
 
-  $('.button').not('.hover').on('click', function() {
+  hoverIn = function() {
     var type = $(this).html();
     $(this).addClass(type + ' animated');
-  }).on('mouseup', function() {
+  };
+
+  hoverOut = function() {
     var type = $(this).html();
     $(this).removeClass(type + ' animated');
-  });
+  };
+
+  $('.hover').hover(hoverIn, hoverOut);
+  $('.click').click(hoverIn).on('mouseup', hoverOut);
 
   $('.submit_button').hover(function() {
     $(this).addClass('hover')
   }, function() {
-      $(this).removeClass('hover');
+    $(this).removeClass('hover');
   });
 
   $('#error_button').mouseup(function() {
