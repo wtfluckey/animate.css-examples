@@ -100,18 +100,22 @@ input.warning {
   background-color: lightblue;
 }
 
-.quick {
+.Default {
+  -webkit-animation-duration: 1s;
+}
+
+.Fast {
   -webkit-animation-duration: .7s;
 }
 
-.supa_quick {
+.SupaFast {
   -webkit-animation-duration: .5s;
 }
 
-.slow {
+.Slow {
   -webkit-animation-duration: 2s;
 }
 
-.supa_slow {
+.SupaSlow {
   -webkit-animation-duration: 3s;
 }

@@ -24,19 +24,19 @@ $(function() {
   });
 
   $('#error_button').mouseup(function() {
-    $('#input_error').addClass('quick animated flash error');
+    $('#input_error').addClass('Fast animated flash error');
   }).mousedown(function() {
     $('#input_error').removeClass();
   });
 
   $('#success_button').on('click', function() {
-    $(this).removeClass('hover').addClass('quick animated tada success').html('Success!');
+    $(this).removeClass('hover').addClass('Fast animated tada success').html('Success!');
   }).on('mouseup', function() {
     $('#success_button').removeClass('animated tada success');
   });
 
   $('#warning_button').mouseup(function() {
-    $('#input_warning').addClass('quick animated pulse warning');
+    $('#input_warning').addClass('Fast animated pulse warning');
   }).mousedown(function() {
     $('#input_warning').removeClass();
   });
@@ -62,32 +62,10 @@ $(function() {
       $(this).removeClass();
   });
 
-  $('.js_supa_slow_click').mouseup(function() {
-    $('#time_changer').removeClass().addClass('supa_slow animated fadeInDown').html('3 seconds');
-  }).mousedown(function() {
-    $('#time_changer').removeClass();
-  });
-
-  $('.js_slow_click').mouseup(function() {
-    $('#time_changer').removeClass().addClass('slow animated fadeInDown').html('2 seconds');
-  }).mousedown(function() {
-    $('#time_changer').removeClass();
-  });
-
-  $('.js_default_click').mouseup(function() {
-    $('#time_changer').removeClass().addClass('animated fadeInDown').html('1 second');
-  }).mousedown(function() {
-    $('#time_changer').removeClass();
-  });
-
-  $('.js_fast_click').mouseup(function() {
-    $('#time_changer').removeClass().addClass('quick animated fadeInDown').html('.7 seconds');
-  }).mousedown(function() {
-    $('#time_changer').removeClass();
-  });
-
-  $('.js_supa_fast_click').mouseup(function() {
-    $('#time_changer').removeClass().addClass('supa_quick animated fadeInDown').html('.5 seconds');
+  $('.js_click').mouseup(function() {
+    var animation_speed = $(this).html();
+    var animation_time = $(this).data('timing');
+    $('#time_changer').removeClass().addClass('animated fadeInDown ' + animation_speed + '').html(animation_time);
   }).mousedown(function() {
     $('#time_changer').removeClass();
   });
