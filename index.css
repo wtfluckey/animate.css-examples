@@ -15,12 +15,12 @@ h3 {
   margin-bottom: 0px
 }
 
-.buttons {
-  padding-top: 30px;
-}
-
 .header {
   margin-bottom: 50px;
+}
+
+.title {
+  margin-bottom: 20px;
 }
 
 #hover_buttons, #click_buttons {
