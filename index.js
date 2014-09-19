@@ -59,6 +59,8 @@ $(function() {
   });
 
   $('.js_click').mouseup(function() {
+    var animation_type = $('option').val();
+    alert(animation_type);
     var animation_speed = $(this).html();
     var animation_time = $(this).data('timing');
     $('#time_changer').removeClass().addClass('animated fadeInDown ' + animation_speed + '').html(animation_time);
