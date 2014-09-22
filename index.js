@@ -1,5 +1,6 @@
 $(function() {
 
+  /* Hover & Click  */
   hoverIn = function() {
     var type = $(this).html();
     $(this).addClass(type + ' animated');
@@ -13,30 +14,37 @@ $(function() {
   $('.hover').hover(hoverIn, hoverOut);
   $('.click').click(hoverIn).on('mouseup', hoverOut);
 
+
+  /* Submit button hovers. TODO: convert to CSS */
   $('.submit_button').hover(function() {
     $(this).addClass('hover')
   }, function() {
     $(this).removeClass('hover');
   });
 
+  /* TODO: Refactor these! Data attributes or something*/
+  /* Form Validations - error */
   $('#error_button').mouseup(function() {
     $('#input_error').addClass('Fast animated flash error');
   }).mousedown(function() {
     $('#input_error').removeClass();
   });
 
+  /* Form Validations - success */
   $('#success_button').on('click', function() {
     $(this).removeClass('hover').addClass('Fast animated tada success').html('Success!');
   }).on('mouseup', function() {
     $('#success_button').removeClass('animated tada success');
   });
 
+  /* Form Validations - warning */
   $('#warning_button').mouseup(function() {
     $('#input_warning').addClass('Fast animated pulse warning');
   }).mousedown(function() {
     $('#input_warning').removeClass();
   });
 
+  /* Scrolling entrances */
   $(window).scroll( function() {
     $('.hideme').each( function(i) {
       var bottom_of_object = $(this).position().top + $(this).outerHeight();
@@ -49,6 +57,7 @@ $(function() {
     });
   });
 
+  /* Click on the blocks after scroll to trigger animation again */
   $('.block')
     .mouseup(function() {
       var type = $(this).html();
@@ -58,6 +67,7 @@ $(function() {
       $(this).removeClass();
   });
 
+  /* Animation picker  */
   $('.js_click').mouseup(function() {
     var animation_type = $('.choose_animation').val();
     var animation_speed = $(this).html();
