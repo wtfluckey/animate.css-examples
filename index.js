@@ -59,11 +59,12 @@ $(function() {
   });
 
   $('.js_click').mouseup(function() {
-    var animation_type = $('option').val();
+    var animation_type = $('.choose_animation').val();
     var animation_speed = $(this).html();
     var animation_time = $(this).data('timing');
-    $('#time_changer').removeClass().addClass('animated fadeInDown ' + animation_speed + '').html(animation_time);
+    $('#time_changer').removeClass().addClass('animated ' + animation_type + ' ' + animation_speed).html(animation_time);
   }).mousedown(function() {
     $('#time_changer').removeClass();
   });
+
 });
