@@ -68,13 +68,13 @@ $(function() {
   });
 
   /* Animation picker  */
-  $('.js_click').mouseup(function() {
-    var animation_type = $('.choose_animation').val();
+  $('.js_click_1').mouseup(function() {
+    var animation_type = $('.choose_animation_1').val();
     var animation_speed = $(this).html();
     var animation_time = $(this).data('timing');
-    $('#time_changer').removeClass().addClass('animated ' + animation_type + ' ' + animation_speed).html(animation_time + ' ' + animation_type);
+    $('#time_changer_1').removeClass().addClass('animated ' + animation_type + ' ' + animation_speed).html(animation_time + ' ' + animation_type);
   }).mousedown(function() {
-    $('#time_changer').removeClass();
+    $('#time_changer_1').removeClass();
   });
 
 });
