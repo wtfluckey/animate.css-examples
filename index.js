@@ -45,6 +45,7 @@ $(function() {
   });
 
   /* Scrolling entrances */
+  /* Only works on screens bigger than 480px */
   if ( $(window).width() > 480) {
     $(window).scroll( function() {
       $('.hideme').each( function(i) {
@@ -73,34 +74,15 @@ $(function() {
 
   /* Animation picker - attention seekers */
 
-
-
   $('.js_click').mouseup(function() {
     var animation_type = $('.choose_animation').val();
     var animation_speed = $(this).html();
     var animation_time = $(this).data('timing');
-    $('#time_changer').removeClass().addClass('animated ' + animation_type + ' ' + animation_speed).html(animation_time + ' ' + animation_type);
+    $('#time_changer').removeClass().addClass(
+      'animated ' + animation_type + ' ' + animation_speed)
+      .html(animation_time + ' ' + animation_type);
   }).mousedown(function() {
     $('#time_changer').removeClass();
   });
 
-  // /* Animation picker - entrances */
-  // $('.js_click_2').mouseup(function() {
-  //   var animation_type = $('.choose_animation_2').val();
-  //   var animation_speed = $(this).html();
-  //   var animation_time = $(this).data('timing');
-  //   $('#time_changer_2').removeClass().addClass('animated ' + animation_type + ' ' + animation_speed).html(animation_time + ' ' + animation_type);
-  // }).mousedown(function() {
-  //   $('#time_changer_2').removeClass();
-  // });
-
-  // /* Animation picker - exits */
-  // $('.js_click_3').mouseup(function() {
-  //   var animation_type = $('.choose_animation_3').val();
-  //   var animation_speed = $(this).html();
-  //   var animation_time = $(this).data('timing');
-  //   $('#time_changer_3').removeClass().addClass('animated ' + animation_type + ' ' + animation_speed).html(animation_time + ' ' + animation_type);
-  // }).mousedown(function() {
-  //   $('#time_changer_3').removeClass();
-  // });
 });
