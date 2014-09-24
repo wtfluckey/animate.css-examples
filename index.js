@@ -1,12 +1,12 @@
 $(function() {
 
   /* Hover & Click  */
-  hoverIn = function() {
+  var hoverIn = function() {
     var type = $(this).html();
     $(this).addClass(type + ' animated');
   };
 
-  hoverOut = function() {
+  var hoverOut = function() {
     var type = $(this).html();
     $(this).removeClass(type + ' animated');
   };
@@ -38,31 +38,36 @@ $(function() {
 
   /* Scrolling entrances */
   /* Only works on screens bigger than 480px */
-  if ( $(window).width() > 480) {
-    $(window).scroll( function() {
-      $('.hideme').each( function(i) {
-        var bottom_of_object = $(this).position().top + $(this).outerHeight();
-        var bottom_of_window = $(window).scrollTop() + $(window).height();
-        var type = $(this).html();
+  var unhide_on_scroll = function() {
+    $('.hideme').each( function(i) {
+      var bottom_of_object = $(this).position().top + $(this).outerHeight();
+      var bottom_of_window = $(window).scrollTop() + $(window).height();
+      var type = $(this).html();
 
-        if (bottom_of_window > bottom_of_object) {
-          $(this).removeClass('hideme').addClass(type + ' animated');
-        }
-      });
+      if (bottom_of_window > bottom_of_object) {
+        $(this).removeClass('hideme').addClass(type + ' animated');
+      }
     });
+  };
+
+  if ( $(window).width() > 480) {
+    $(window).scroll(unhide_on_scroll);
   } else {
-      $('.hideme').removeClass('hideme');
+    $('.hideme').removeClass('hideme');
   };
 
   /* Click on the blocks after scroll to trigger animation again */
-  $('.block')
-    .mouseup(function() {
-      var type = $(this).html();
-      $(this).removeClass().addClass(type + ' animated');
-  }).mousedown(function() {
-      var type = $(this).html();
-      $(this).removeClass();
-  });
+  var animate_block = function() {
+    var type = $(this).html();
+    $(this).removeClass().addClass(type + ' animated');
+  };
+
+  var remove_class = function() {
+    var type = $(this).html();
+    $(this).removeClass();
+  };
+
+  $('.block').mouseup(animate_block).mousedown(remove_class);
 
   /* Animation picker - attention seekers */
   var detect_animation_end = function() {
