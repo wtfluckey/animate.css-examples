@@ -45,17 +45,21 @@ $(function() {
   });
 
   /* Scrolling entrances */
-  $(window).scroll( function() {
-    $('.hideme').each( function(i) {
-      var bottom_of_object = $(this).position().top + $(this).outerHeight();
-      var bottom_of_window = $(window).scrollTop() + $(window).height();
-      var type = $(this).html();
+  if ( $(window).width() > 480) {
+    $(window).scroll( function() {
+      $('.hideme').each( function(i) {
+        var bottom_of_object = $(this).position().top + $(this).outerHeight();
+        var bottom_of_window = $(window).scrollTop() + $(window).height();
+        var type = $(this).html();
 
-      if (bottom_of_window > bottom_of_object) {
-        $(this).removeClass('hideme').addClass(type + ' animated');
-      }
+        if (bottom_of_window > bottom_of_object) {
+          $(this).removeClass('hideme').addClass(type + ' animated');
+        }
+      });
     });
-  });
+  } else {
+      $('.hideme').removeClass('hideme');
+  };
 
   /* Click on the blocks after scroll to trigger animation again */
   $('.block')
