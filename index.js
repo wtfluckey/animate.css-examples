@@ -14,26 +14,24 @@ $(function() {
   $('.hover').hover(hoverIn, hoverOut);
   $('.click').click(hoverIn).on('mouseup', hoverOut);
 
-  /* TODO: Refactor these! Data attributes or something*/
-  /* Form Validations - error */
-  $('#error_button').mouseup(function() {
-    $('#input_error').addClass('Fast animated flash error');
-  }).mousedown(function() {
-    $('#input_error').removeClass();
-  });
+  /* Form Validations - error and warning */
+  var add_animation_to_input = function() {
+    var animation = $(this).data('animation');
+    $(this).siblings('input').addClass(animation);
+  };
+
+  var remove_input_styles = function() {
+    $(this).siblings('input').removeClass();
+  }
+
+  $('.js_submit_validations').mouseup(add_animation_to_input).mousedown(remove_input_styles);
 
   /* Form Validations - success */
+  /* TODO: Refactor this one to use functions above */
   $('#success_button').on('click', function() {
     $(this).removeClass('hover').addClass('Fast animated tada success').html('Success!');
   }).on('mouseup', function() {
     $('#success_button').removeClass('animated tada success');
-  });
-
-  /* Form Validations - warning */
-  $('#warning_button').mouseup(function() {
-    $('#input_warning').addClass('Fast animated pulse warning');
-  }).mousedown(function() {
-    $('#input_warning').removeClass();
   });
 
   /* Scrolling entrances */
