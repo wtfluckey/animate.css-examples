@@ -79,9 +79,9 @@ $(function() {
     var animation_type = $('.choose_animation').val();
     var animation_speed = $(this).html();
     var animation_time = $(this).data('timing');
-    $('.time_changer').removeClass().addClass('animated ' + animation_type + ' ' + animation_speed).html(animation_time + ' ' + animation_type);
+    $('#time_changer').removeClass().addClass('animated ' + animation_type + ' ' + animation_speed).html(animation_time + ' ' + animation_type);
   }).mousedown(function() {
-    $('.time_changer').removeClass();
+    $('#time_changer').removeClass();
   });
 
   // /* Animation picker - entrances */
