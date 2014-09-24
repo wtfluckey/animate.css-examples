@@ -73,35 +73,23 @@ $(function() {
   });
 
   /* Animation picker - attention seekers */
+  var detect_animation_end = function() {
+   $('#time_changer').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', remove_class);
+  };
 
-  $('.js_click').mouseup(function() {
+  var execute_animation = function() {
+    detect_animation_end();
     var animation_type = $('.choose_animation').val();
     var animation_speed = $(this).html();
     var animation_time = $(this).data('timing');
     $('#time_changer').removeClass().addClass(
       'animated ' + animation_type + ' ' + animation_speed)
       .html(animation_time + ' ' + animation_type);
-  }).mousedown(function() {
-    $('#time_changer').removeClass();
-  });
-
-  var detect_animation_end = function() {
-   $('#time_changer_exits').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', remove_class);
-  };
-
-  var execute_animation = function() {
-    detect_animation_end();
-    var animation_type = $('.exits').val();
-    var animation_speed = $(this).html();
-    var animation_time = $(this).data('timing');
-    $('#time_changer_exits').removeClass().addClass(
-      'animated ' + animation_type + ' ' + animation_speed)
-      .html(animation_time + ' ' + animation_type);
   };
 
   var remove_class = function() {
-    $('#time_changer_exits').removeClass();
+    $('#time_changer').removeClass();
   };
 
-  $('.js_click_exit').mouseup(execute_animation).mousedown(remove_class);
+  $('.js_click').mouseup(execute_animation).mousedown(remove_class);
 });
