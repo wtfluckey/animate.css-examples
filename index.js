@@ -14,14 +14,6 @@ $(function() {
   $('.hover').hover(hoverIn, hoverOut);
   $('.click').click(hoverIn).on('mouseup', hoverOut);
 
-
-  /* Submit button hovers. TODO: convert to CSS */
-  $('.submit_button').hover(function() {
-    $(this).addClass('hover')
-  }, function() {
-    $(this).removeClass('hover');
-  });
-
   /* TODO: Refactor these! Data attributes or something*/
   /* Form Validations - error */
   $('#error_button').mouseup(function() {

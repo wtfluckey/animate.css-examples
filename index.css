@@ -76,13 +76,13 @@ input.warning {
   width: 60px;
 }
 
+.submit_button:hover {
+  background-color: #5F7A9E;
+}
+
 .submit_button.success {
   color: white;
   background-color: green;
-}
-
-.submit_button.hover {
-  background-color: #5F7A9E;
 }
 
 .scrolling > div {
