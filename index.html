@@ -21,6 +21,7 @@
           <h3>Hover over buttons to see animation</h3>
           Animation durations: 1s. </br>
         </div>
+
         <span class="button hover">bounce</span>
         <span class="button hover">shake</span>
         <span class="button hover">flash</span>
@@ -33,7 +34,8 @@
       </div>
 
       <div class="code">
-        <pre class="prettyprint">
+        <span class="view_code">view code</span>
+        <pre class="prettyprint hidden">
           var hoverIn = function() {
             var type = $(this).html();
             $(this).addClass(type + ' animated');
@@ -64,6 +66,22 @@
 
       </div>
 
+      <div class="code">
+        <span class="view_code">view code</span>
+        <pre class="prettyprint hidden">
+          var hoverIn = function() {
+            var type = $(this).html();
+            $(this).addClass(type + ' animated');
+          };
+
+          var hoverOut = function() {
+            var type = $(this).html();
+            $(this).removeClass(type + ' animated');
+          };
+
+          $('.click').click(hoverIn).on('mouseup', hoverOut);
+        </pre>
+      </div>
       <hr>
 
       <div>

@@ -14,6 +14,13 @@ $(function() {
   $('.hover').hover(hoverIn, hoverOut);
   $('.click').click(hoverIn).on('mouseup', hoverOut);
 
+
+  var displayCodeBlock = function() {
+    $(this).siblings('.prettyprint').slideToggle('slow');
+  };
+
+  $('.view_code').click(displayCodeBlock);
+
   /* Form Validations - error and warning */
   var add_animation_to_input = function() {
     var animation = $(this).data('animation');
