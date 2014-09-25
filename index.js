@@ -29,7 +29,7 @@ $(function() {
 
   var remove_input_styles = function() {
     $(this).siblings('input').removeClass();
-  }
+  };
 
   var add_success_animation = function() {
     var animation = $(this).data('animation');

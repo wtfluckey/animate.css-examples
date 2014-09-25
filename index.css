@@ -32,6 +32,10 @@ h3 {
   text-align: left;
 }
 
+.nocode {
+  color: #E62D73;
+}
+
 .hidden {
   display: none;
 }
