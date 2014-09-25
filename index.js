@@ -24,15 +24,19 @@ $(function() {
     $(this).siblings('input').removeClass();
   }
 
-  $('.js_submit_validations').mouseup(add_animation_to_input).mousedown(remove_input_styles);
+  var add_success_animation = function() {
+    var animation = $(this).data('animation');
+    var message = $(this).data('message');
+    $(this).removeClass('hover').addClass(animation).html(message);
+  };
 
-  /* Form Validations - success */
-  /* TODO: Refactor this one to use functions above */
-  $('#success_button').on('click', function() {
-    $(this).removeClass('hover').addClass('Fast animated tada success').html('Success!');
-  }).on('mouseup', function() {
-    $('#success_button').removeClass('animated tada success');
-  });
+  var remove_success = function() {
+    var animation = $(this).data('animation');
+    $(this).removeClass(animation);
+  };
+
+  $('.js_submit_validations').mouseup(add_animation_to_input).mousedown(remove_input_styles);
+  $('#success_button').click(add_success_animation).mouseup(remove_success);
 
   /* Scrolling entrances */
   /* Only works on screens bigger than 480px */
