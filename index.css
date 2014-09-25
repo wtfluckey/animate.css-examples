@@ -69,8 +69,13 @@ input.warning {
 }
 
 input:hover {
-  border: 1px solid rgba(0, 0, 0, 0.5);
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5), inset 0px 0px 2px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(95, 122, 158, 0.5);
+  box-shadow: 0px 0px 5px rgba(95, 122, 158, 0.5), inset 0px 0px 2px rgba(95, 122, 158, 0.5);
+}
+
+input:focus {
+  border: 1px solid rgba(95, 122, 158, 1);
+  box-shadow: 0px 0px 5px rgba(95, 122, 158, 1), inset 0px 0px 2px rgba(95, 122, 158, 1);
 }
 
 .submit_button {
