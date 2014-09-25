@@ -32,6 +32,22 @@
 
       </div>
 
+      <div class="code">
+        <pre class="prettyprint">
+          var hoverIn = function() {
+            var type = $(this).html();
+            $(this).addClass(type + ' animated');
+          };
+
+          var hoverOut = function() {
+            var type = $(this).html();
+            $(this).removeClass(type + ' animated');
+          };
+
+          $('.hover').hover(hoverIn, hoverOut);
+        </pre>
+      </div>
+
       <div id="click_buttons">
         <div class="title">
           <h3>Click buttons to see animation</h3>
@@ -236,5 +252,6 @@
   </body>
 
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?lang=css&skin=sunburst"></script>
   <script src="index.js"></script>
 </html>
