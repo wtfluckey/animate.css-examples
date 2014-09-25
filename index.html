@@ -33,23 +33,6 @@
 
       </div>
 
-      <div class="code">
-        <span class="view_code">view code</span>
-        <pre class="prettyprint hidden">
-          var hoverIn = function() {
-            var type = $(this).html();
-            $(this).addClass(type + ' animated');
-          };
-
-          var hoverOut = function() {
-            var type = $(this).html();
-            $(this).removeClass(type + ' animated');
-          };
-
-          $('.hover').hover(hoverIn, hoverOut);
-        </pre>
-      </div>
-
       <div id="click_buttons">
         <div class="title">
           <h3>Click buttons to see animation</h3>
@@ -79,6 +62,7 @@
             $(this).removeClass(type + ' animated');
           };
 
+          $('.hover').hover(hoverIn, hoverOut);
           $('.click').click(hoverIn).on('mouseup', hoverOut);
         </pre>
       </div>
@@ -110,25 +94,6 @@
           </form>
         </div>
 
-        <div class="code">
-          <span class="view_code">view code</span>
-          <pre class="prettyprint hidden">
-            <span class="nocode">This code is for both the error and warning validations</span>
-
-            var add_animation_to_input = function() {
-              var animation = $(this).data('animation');
-              $(this).siblings('input').addClass(animation);
-            };
-
-            var remove_input_styles = function() {
-              $(this).siblings('input').removeClass();
-            };
-
-            $('.js_submit_validations').mouseup(add_animation_to_input)
-                                       .mousedown(remove_input_styles);
-          </pre>
-        </div>
-
         Success validation with animation</br>
         <div class="form">
           <span class="animation_info">
@@ -144,6 +109,22 @@
         <div class="code">
           <span class="view_code">view code</span>
           <pre class="prettyprint hidden">
+            <span class="nocode">Error and warning animations</span>
+
+            var add_animation_to_input = function() {
+              var animation = $(this).data('animation');
+              $(this).siblings('input').addClass(animation);
+            };
+
+            var remove_input_styles = function() {
+              $(this).siblings('input').removeClass();
+            };
+
+            $('.js_submit_validations').mouseup(add_animation_to_input)
+                                       .mousedown(remove_input_styles);
+
+            <span class="nocode">Success animation</span>
+
             var add_success_animation = function() {
               var animation = $(this).data('animation');
               var message = $(this).data('message');
