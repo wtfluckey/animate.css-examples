@@ -26,6 +26,7 @@ h3 {
 .view_code {
   color: #E62D73;
   cursor: pointer;
+  display: block;
 }
 
 .prettyprint {
@@ -121,10 +122,18 @@ input:focus {
   opacity: 0;
 }
 
+.timing {
+  margin-bottom: 20px;
+}
+
 .timing > div {
   padding: 20px;
   margin: 50px;
   background-color: lightblue;
+}
+
+.timing_submit {
+  margin-bottom: 20px;
 }
 
 .Default {

@@ -157,6 +157,45 @@
           <div class="hideme block">flipInY</div>
           <div class="hideme block">zoomInRight</div>
           <div class="hideme block">rotateIn</div>
+
+        <span class="code">
+          <span class="view_code">view code</span>
+          <pre class="prettyprint hidden">
+            <span class="nocode">Fade in blocks on scroll</span>
+              var unhide_on_scroll = function() {
+                $('.hideme').each( function(i) {
+                  var bottom_of_object =
+                    $(this).position().top + $(this).outerHeight();
+                  var bottom_of_window =
+                    $(window).scrollTop() + $(window).height();
+                  var type = $(this).html();
+
+                  if (bottom_of_window > bottom_of_object) {
+                    $(this).removeClass('hideme').addClass(type + ' animated');
+                  }
+                });
+              };
+
+              if ( $(window).width() > 480) {
+                $(window).scroll(unhide_on_scroll);
+              } else {
+                $('.hideme').removeClass('hideme');
+              };
+
+            <span class="nocode">Click blocks to animate again</span>
+              var animate_block = function() {
+                var type = $(this).html();
+                $(this).removeClass().addClass(type + ' animated');
+              };
+
+              var remove_class = function() {
+                var type = $(this).html();
+                $(this).removeClass();
+              };
+
+              $('.block').mouseup(animate_block).mousedown(remove_class);
+          </pre>
+        </span>
       </div>
 
       <hr>
@@ -265,6 +304,31 @@
           <span class="submit_button js_click" data-timing=".5 seconds">SupaFast</span>
 
       </div>
+      <span class="code">
+        <span class="view_code">view code</span>
+        <pre class="prettyprint hidden">
+          var detect_animation_end = function() {
+           $('#time_changer').one('webkitAnimationEnd mozAnimationEnd 
+                  MSAnimationEnd oanimationend animationend', remove_class);
+          };
+
+          var execute_animation = function() {
+            detect_animation_end();
+            var animation_type = $('.choose_animation').val();
+            var animation_speed = $(this).html();
+            var animation_time = $(this).data('timing');
+            $('#time_changer').removeClass().addClass(
+              'animated ' + animation_type + ' ' + animation_speed)
+              .html(animation_time + ' ' + animation_type);
+          };
+
+          var remove_class = function() {
+            $('#time_changer').removeClass();
+          };
+
+          $('.js_click').mouseup(execute_animation).mousedown(remove_class);
+        </pre>
+      </span>
     </div>
 
   </body>
