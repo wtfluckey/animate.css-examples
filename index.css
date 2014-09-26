@@ -41,12 +41,18 @@ h3 {
   display: none;
 }
 
+@media (max-width: 661px) {
+  .code {
+    display: none;
+  }
+}
+
 #hover_buttons, #click_buttons {
   height: 100px;
   margin-bottom: 10px;
 }
 
-@media (max-width: 665px) {
+@media (max-width: 661px) {
   #hover_buttons, #click_buttons {
     height: 200px;
   }
@@ -65,7 +71,7 @@ h3 {
   display: inline-block;
 }
 
-@media (max-width: 665px) {
+@media (max-width: 661px) {
   .hover, .click {
     margin-top: 15px;
   }
