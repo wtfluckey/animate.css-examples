@@ -46,11 +46,29 @@ h3 {
   margin-bottom: 10px;
 }
 
+@media (max-width: 665px) {
+  #hover_buttons, #click_buttons {
+    height: 200px;
+  }
+}
+
+@media (max-width: 360px) {
+  #hover_buttons, #click_buttons {
+    height: 250px;
+  }
+}
+
 .button {
   border: 1px solid #666;
   margin-right: 15px;
   padding: 10px;
   display: inline-block;
+}
+
+@media (max-width: 665px) {
+  .hover, .click {
+    margin-top: 15px;
+  }
 }
 
 
