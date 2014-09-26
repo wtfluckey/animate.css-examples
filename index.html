@@ -160,7 +160,44 @@
           <div class="hideme block">zoomInRight</div>
           <div class="hideme block">rotateIn</div>
 
-        <div data-include="animate_on_scroll.html"></div>
+        <span class="code">
+          <span class="view_code">view code</span>
+          <pre class="prettyprint hidden">
+            <span class="nocode">Animate blocks on scroll</span>
+              var unhide_on_scroll = function() {
+                $('.hideme').each( function(i) {
+                  var bottom_of_object =
+                    $(this).position().top + $(this).outerHeight();
+                  var bottom_of_window =
+                    $(window).scrollTop() + $(window).height();
+                  var type = $(this).html();
+
+                  if (bottom_of_window > bottom_of_object) {
+                    $(this).removeClass('hideme').addClass(type + ' animated');
+                  }
+                });
+              };
+
+              if ( $(window).width() > 480) {
+                $(window).scroll(unhide_on_scroll);
+              } else {
+                $('.hideme').removeClass('hideme');
+              };
+
+            <span class="nocode">Click blocks to animate again</span>
+              var animate_block = function() {
+                var type = $(this).html();
+                $(this).removeClass().addClass(type + ' animated');
+              };
+
+              var remove_class = function() {
+                var type = $(this).html();
+                $(this).removeClass();
+              };
+
+              $('.block').mouseup(animate_block).mousedown(remove_class);
+          </pre>
+        </span>
 
       </div>
 
