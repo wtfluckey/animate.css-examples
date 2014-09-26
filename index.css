@@ -133,6 +133,12 @@ input:focus {
   width: 60px;
 }
 
+@media (max-width: 435px) {
+  .submit_button {
+    margin-top: 5px;
+  }
+}
+
 .submit_button:hover {
   background-color: #5F7A9E;
 }
