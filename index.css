@@ -88,8 +88,14 @@ form {
   float: left;
 }
 
+@media (max-width: 600px) {
+  .animation_info {
+  float: none;
+  }
+}
+
 input {
-  width: 200px;
+  width: 40%;
   padding: 10px;
   border: 1px solid #999;
   margin-left: 5px;
