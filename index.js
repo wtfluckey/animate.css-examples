@@ -47,6 +47,16 @@ $(function() {
 
   /* Scrolling entrances */
   /* Only works on screens bigger than 480px */
+
+  var animationEnd = function() {
+   $('.block').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', removeClasses);
+  };
+
+  var removeClasses = function() {
+    var classes = "animated flipInX flipInY fadeInDown bounceIn zoomInRight rotateIn fast supaFast";
+    $('.block').removeClass(classes);
+  };
+
   var unhide_on_scroll = function() {
     $('.hideme').each( function(i) {
       var bottom_of_object = $(this).position().top + $(this).outerHeight();
@@ -55,6 +65,7 @@ $(function() {
 
       if (bottom_of_window > bottom_of_object) {
         $(this).removeClass('hideme').addClass(type + ' animated');
+        animationEnd();
       }
     });
   };
